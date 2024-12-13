@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Layout</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+        }
+
+        .hero-section {
+            background: url('images/Rectangle\ 1.png') no-repeat center center/cover;
+            height: 100vh;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+        @media (max-width: 500px) {
+        .hero-section {
+            background: url('images/reduced.png') no-repeat center center/cover;
+            height: 100vh;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            }
+        }
+
+        .navbar {
+            background-color: transparent !important;
+            position: absolute;
+            top: 0;
+            width: 100%;
+            z-index: 10;
+            font-size: 14px;
+            font-weight: 600;
+        }
+
+        .navbar-brand img {
+            height: 40px;
+        }
+
+        .register-btn {
+            background-color: #FFC65E;
+            border: none;
+            color: #1E1E1E;
+            padding: 8px 45px;
+            border-radius: 25px;
+            font-weight: 600;
+            font-size: 14px;
+        }
+
+        .register-btn:hover {
+            background-color: #e0a800;
+        }
+
+        @media (max-width: 991px) {
+            .register-btn {
+            background-color: #FFC65E;
+            border: none;
+            color: #1E1E1E;
+            padding: 8px 45px;
+            border-radius: 25px;
+            font-weight: 600;
+            font-size: 14px;
+            margin-top: 30px;
+        }
+
+        }
+
+        .join-btn {
+            background-color: #0D6EFD;
+            border: none;
+            color: #FFFFFF;
+            padding: 12px 115px;
+            border-radius: 25px;
+            font-weight: 600;
+            font-size: 14px;
+        }
+
+        .navbar-nav .nav-link {
+            font-weight: 500;
+            color: white !important;
+        }
+
+        .navbar-toggler {
+            border-color: white;
+        }
+
+        .navbar-toggler-icon {
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3E%3Cpath stroke='white' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+        }
+
+        h1 {
+            font-size: 40px;
+            line-height: 1.4;
+            font-weight: 700;
+        }
+        h10 {
+            font-size: 36px;
+            line-height: 1.2;
+            font-weight: 700;
+        }
+
+        p {
+            font-size: 1rem;
+            line-height: 1.6;
+        }
+
+        .img-fluid {
+            max-width: 100%;
+            height: auto;
+            border-radius: 12px;
+        }
+
+        .card {
+            overflow: hidden;
+        }
+
+        .card-title {
+            font-size: 32px;
+            font-weight: 700;
+        }
+
+
+        .card-subtitle {
+            font-size: 20px;
+            color: #212529;
+            font-weight: 600;
+        }
+        .card-subtitle1 {
+            font-size: 20px;
+            color: white;
+            font-weight: 600;
+        }
+        .card-text {
+            font-size: 14px;
+            line-height: 1.6;
+            color: #212529;
+        }
+
+        .bg-primary .card-title {
+            color: white;
+        }
+
+        .bg-primary .card-text {
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        .card-img-top {
+            height: 444px;
+            object-fit: cover;
+        }
+        .card-body{
+            height: 444px;
+        }
+
+        .custom-width-lg {
+            width: 100%; /* Default for all screens */
+        }
+
+        @media (min-width: 992px) {
+            .custom-width-lg {
+                width: 75%; /* Reduce width for lg screens */
+            }
+        }
+
+        .split-background {
+            height: 100vh; /* Full viewport height */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(to bottom, white 40%, #0056FF 40%);
+            position: relative;
+            text-align: center;
+        }
+
+        @media (max-width: 700px) {
+            .split-background {
+            height: 80vh; /* Full viewport height */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(to bottom, white 40%, #0056FF 40%);
+            position: relative;
+            text-align: center;
+        }
+
+        }
+        @media (max-width: 600px) {
+            .split-background {
+            height: 70vh; /* Full viewport height */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(to bottom, white 40%, #0056FF 40%);
+            position: relative;
+            text-align: center;
+        }
+
+        }
+
+        @media (max-width: 450px) {
+            .split-background {
+            height: 60vh; /* Full viewport height */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(to bottom, white 40%, #0056FF 40%);
+            position: relative;
+            text-align: center;
+        }
+
+        }
+
+        @media (max-width: 400px) {
+            .split-background {
+            height: 50vh; /* Full viewport height */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(to bottom, white 40%, #0056FF 40%);
+            position: relative;
+            text-align: center;
+        }
+
+        }
+        .content-wrapper {
+            z-index: 2; /* Ensure content appears above the background */
+        }
+
+        .split-background img {
+            width: 100%; /* Adjust width as needed */
+            border-radius: 12px; /* Rounded edges for the image */
+            object-fit: cover;
+        }
+
+        .register-btn1 {
+            background-color: #FFC65E; /* Yellow color */
+            border: none;
+            color: #1E1E1E;
+            padding: 10px 140px;
+            font-size: 16px;
+            border-radius: 25px; /* Rounded button */
+            font-weight: 600;
+            cursor: pointer;
+        }
+
+        .register-btn1:hover {
+            background-color: #e0a800; /* Slightly darker yellow on hover */
+        }
+
+        h2, p {
+            margin: 0;
+        }
+
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light mt-5">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <img src="images/UniLink Logo 1.png" alt="Logo">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto me-5 gap-4">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Products</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Property Ownership</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Subscriber's Guide</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Contact Us</a>
+                    </li>
+                </ul>
+                <button class="register-btn">Register</button>
+
+            </div>
+
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+    </section>
+
+    <div class="container my-5">
+        <div class="row align-items-center">
+            <!-- Text Column -->
+            <div class="col-lg-6">
+                <div class="custom-width-lg ms-lg-0">               
+
+                <h1 class="text-primary fw-bold text-sm-center text-md-center text-lg-start">
+                    THE NEXT GENERATION<br>
+                    <span class="" style="color: #212529;">OF SECURE HOSTED BROADBAND</span>
+                </h1>
+                
+                <p class="w-100 w-lg-75 text-sm-center text-md-center text-lg-start mb-5" style="color: #212529; font-size: 20px; font-weight: 500;">
+                    UniLink Communications provides a secure, comprehensive, modern approach to high speed broadband support for a facility’s internet, WiFi, IoT technology, and associated network infrastructure.
+                </p>
+                <p class="w-100 w-lg-75 text-sm-center text-md-center text-lg-start" style="color: #656565; font-size: 14px; font-weight: 400;">
+                    We modernize and simplify the way people connect and use the internet. We offer multiple internet plans, customizable access, and reporting all managed and maintained by our live U.S.A based support team available 24/7.
+                </p>
+            </div>
+        </div>
+
+            <!-- Image Column -->
+            <div class="col-lg-6 d-flex justify-content-center justify-content-lg-end">
+                <img src="images/Rectangle 8.png" alt="Family" class="img-fluid rounded">
+            </div>
+        </div>
+    </div>
+
+    <div class="container my-5">
+        <div class="row align-items-center">
+            <!-- Image Column -->
+            <div class="col-lg-6 order-2 order-lg-1 d-flex justify-content-center justify-content-lg-start">
+                <img src="images/Rectangle 9.png" alt="Family" class="img-fluid rounded">
+            </div>
+            <!-- Text Column -->
+            <div class="col-lg-6 order-1 order-lg-2">
+                <div class="custom-width-lg ms-lg-5">               
+                <p class="w-100 w-lg-75 text-sm-center text-md-center text-lg-start mb-5" style="color: #212529; font-size: 20px; font-weight: 500;">
+                    Once connected through the UniLink portal, there is no need for the additional cost of “old-fashioned” cable TV or telephone services.                 </p>
+                <p class="w-100 w-lg-75 text-sm-center text-md-center text-lg-start" style="color: #656565; font-size: 14px; font-weight: 400;">
+                    Feel free to “Cut the Cord” and connect a smart TV, Roku or amazon Fire Stick to UniLink’s managed WiFi allowing access to the many available free and paid TV Apps along with connecting any mobile device for WiFi calling. If desired, one can also subscribe to a modern internet based phone service, all for a fraction of the cost of traditional methods. Contact our team to find out more.                </p>
+            </div>
+        </div>
+
+           
+        </div>
+    </div>
+
+    <div class="container my-5">
+        <div class="row align-items-center">
+            <!-- Text Column -->
+            <div class="col-lg-6">
+            <div class="custom-width-lg ms-lg-0">               
+ 
+                <h1 class="text-primary fw-bold text-sm-center text-md-center text-lg-start" style="font-size: 36px;">
+                    Experience easy, safe, secure high speed internet,
+                    <span class="" style="color: #212529;">and our friendly customer support.</span>
+                </h1>
+                <div class="d-flex justify-content-center">
+                    <button class="join-btn mt-5 mb-3">Join us Today</button>
+                </div>
+            </div>
+        </div>
+
+            <!-- Image Column -->
+            <div class="col-lg-6 d-flex justify-content-center justify-content-lg-end">
+                <img src="images/Rectangle 10.png" alt="Family" class="img-fluid rounded">
+            </div>
+        </div>
+    </div>
+
+    <div class="container-fluid my-5 py-5" style="background-color: #F5F2ED;">
+
+        <div class="container py-5">
+            <!-- Title -->
+        <h2 class="text-center mb-5 fw-bold">PRODUCTS</h2>
+    
+        <!-- Card Row -->
+        <div class="row g-4">
+            <!-- Card 1 -->
+            <div class="col-md-4">
+                <div class="card border-0 rounded-4 shadow-sm">
+                    <img src="images/11.png" alt="Internet Service" class="card-img-top rounded-top-4">
+                    <div class="card-body">
+                        <h5 class="card-title text-primary fw-bold">INTERNET SERVICE</h5>
+                        <p class="card-subtitle mb-2">Hosted Secure Broadband<br>Internet With WiFi</p>
+                        <p class="card-text mt-5">
+                            Secure modern high speed broadband internet with WiFi over dedicated fiber optic cable. We have multiple plan options available all supported by our live U.S.A. based customer service team                        </p>
+                    </div>
+                </div>
+            </div>
+    
+            <!-- Card 2 -->
+            <div class="col-md-4">
+                <div class="card border-0 rounded-4 shadow-sm">
+                    <img src="images/22.png" alt="Telephone Service" class="card-img-top rounded-top-4">
+                    <div class="card-body">
+                        <h5 class="card-title text-primary fw-bold">TELEPHONE SERVICE</h5>
+                        <p class="card-subtitle mb-2">Voice Over I.P. Telephone<br>Service</p>
+                        <p class="card-text mt-5">
+                            Once UniLink’s hosted broadband internet service is active, voice over I.P. phones can be added if desired. Available for residence, office space or any building system.  Analog Terminal Adapters are available if required.  Email or call us for details.                        </p>
+                    </div>
+                </div>
+            </div>
+    
+            <!-- Card 3 -->
+            <div class="col-md-4">
+                <div class="card border-0 rounded-4 shadow-sm bg-primary text-white">
+                    <img src="images/33.png" alt="Entertainment Service" class="card-img-top rounded-top-4">
+                    <div class="card-body">
+                        <h5 class="card-title fw-bold">ENTERTAINMENT SERVICE</h5>
+                        <p class="card-subtitle1 mb-3">Entertainment And Social Media</p>
+                        <p class="card-text mt-4">
+                            UniLink offers Monytize, a FREE TO JOIN, INVITE ONLY, Entertainment and Social Media Platform. Monytize is an aggregated platform which allows the subscriber to watch movies, stream music, play video games, and interact with friends and family all on one social platform. With the proprietary wallet system, focus is on creating shareable revenue with subscribers, turning the tables on how the industry interacts with its users.                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="split-background">
+    <div class="content-wrapper d-flex flex-column align-items-center justify-content-center">
+        <img src="images/pexels-yankrukov-6209292 1.png" alt="Video Call" class="rounded img-fluid mb-4">
+        <h2 class="text-white fw-bold" style="font-size: 40px;">JOIN US TODAY</h2>
+        <p class="text-white text-center mt-3 mb-4">
+            Experience easy, safe, secure high-speed internet<br>
+            and of course, our friendly customer support.
+        </p>
+        <button class="register-btn1">Register</button>
+    </div>
+</div>
+
+<footer class="bg-light py-5">
+    <div class="container">
+        <div class="row align-items-start">
+            <!-- Logo Column -->
+            <div class="col-12 col-md-3 mb-4 mb-md-0 text-center text-md-start">
+                <img src="images/UniLink Logo 2.png" alt="UniLink Logo" class="img-fluid" style="max-width: 170px;">
+            </div>
+
+            <!-- Links Column 1 -->
+            <div class="col-12 col-md-3 mb-4 mb-md-0">
+                <ul class="list-unstyled" style="font-size: 12px; font-weight: 600;">
+                    <li class="mb-1"><a href="#" class="text-dark text-decoration-none">Products</a></li>
+                    <li class="mb-1"><a href="#" class="text-dark text-decoration-none">Property Ownership</a></li>
+                    <li class="mb-1"><a href="#" class="text-dark text-decoration-none">Subscriber's Guide</a></li>
+                    <li class="mb-1"><a href="#" class="text-dark text-decoration-none">Contact Us</a></li>
+                </ul>
+            </div>
+
+            <!-- Links Column 2 -->
+            <div class="col-12 col-md-3 mb-4 mb-md-0">
+                <ul class="list-unstyled" style="font-size: 12px; font-weight: 600;">
+                    <li class="mb-1"><a href="#" class="text-dark text-decoration-none">Support Request</a></li>
+                    <li class="mb-1"><a href="#" class="text-dark text-decoration-none">Privacy Policy</a></li>
+                    <li class="mb-1"><a href="#" class="text-dark text-decoration-none">Fulfillment Policy</a></li>
+                </ul>
+            </div>
+
+            <!-- Company Info Column -->
+            <div class="col-12 col-md-3">
+                <h6 class="mb-2" style="font-size: 12px; font-weight: 600;">Company Information</h6>
+                <address class="text-dark" style="font-size: 12px; font-weight: 400;">
+                    UniLink Communications, LLC<br>
+                    1 Park Plaza, Suite 950<br>
+                    Irvine, CA 92614<br>
+                    <a href="tel:8005461730" class="text-dark text-decoration-none">800-546-1730</a>
+                </address>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
